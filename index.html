@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>林佳燕 Chia-Yen Iris Lin · 學術履歷</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f2f5f9;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+        }
+
+        /* 滿版 HERO 區塊 — 牛津藍 (#002147) */
+        .hero {
+            width: 100%;
+            background: #002147;
+            padding: 32px 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+        }
+        .hero-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 24px 30px;
+            color: white;
+        }
+
+        /* 照片區 */
+        .hero-avatar {
+            flex-shrink: 0;
+        }
+        .hero-avatar img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255,255,255,0.35);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+            background: #d9e2ed;
+            display: block;
+        }
+
+        /* 文字區 */
+        .hero-text {
+            flex: 1;
+            min-width: 200px;
+        }
+        .hero-text .name-title h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #fff;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+        .hero-text .name-title h1 .en-name {
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: #b6d0e8;
+            margin-left: 12px;
+        }
+        .hero-text .sub {
+            font-size: 1rem;
+            color: #c5d9ef;
+            font-weight: 400;
+            margin-top: 4px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0 18px;
+        }
+        .hero-text .sub span {
+            display: inline-block;
+        }
+
+        /* 右側標籤 */
+        .hero-badge {
+            margin-left: auto;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: #eaf1fa;
+            font-weight: 500;
+            white-space: nowrap;
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0 6px;
+            flex-shrink: 0;
+        }
+        .separator-dot {
+            color: rgba(255,255,255,0.35);
+            margin: 0 4px;
+        }
+
+        /* 響應式調整 */
+        @media (max-width: 700px) {
+            .hero-inner {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .hero-badge {
+                margin-left: 0;
+            }
+            .hero-text .sub {
+                justify-content: center;
+            }
+        }
+        @media (max-width: 600px) {
+            .hero {
+                padding: 24px 16px;
+            }
+            .hero-text .name-title h1 {
+                font-size: 1.7rem;
+            }
+            .hero-text .name-title h1 .en-name {
+                font-size: 1.7rem;
+                margin-left: 6px;
+                display: block;
+            }
+            .hero-text .sub {
+                font-size: 0.9rem;
+                gap: 0 10px;
+            }
+            .hero-avatar img {
+                width: 80px;
+                height: 80px;
+            }
+            .hero-badge {
+                font-size: 0.8rem;
+                padding: 6px 14px;
+            }
+        }
+
+        /* 主內容 */
+        .cv-container {
+            max-width: 1000px;
+            width: 100%;
+            background: white;
+            border-radius: 0 0 16px 16px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            padding: 45px 50px;
+            margin: 0 auto 40px auto;
+            transition: all 0.2s;
+        }
+        @media (max-width: 600px) {
+            .cv-container {
+                padding: 25px 18px;
+            }
+        }
+
+        .section {
+            margin-top: 32px;
+        }
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #0a1e2f;
+            border-bottom: 2px solid #d0dceb;
+            padding-bottom: 6px;
+            margin-bottom: 18px;
+            letter-spacing: 0.3px;
+        }
+
+        /* 學經歷 — 改為垂直三行 */
+        .exp-block {
+            display: flex;
+            flex-direction: column;
+            gap: 8px 0;
+            background: #f8faff;
+            padding: 18px 20px;
+            border-radius: 12px;
+            margin-bottom: 6px;
+        }
+        .exp-item {
+            font-size: 1rem;
+            color: #1a2f44;
+            line-height: 1.5;
+        }
+        .exp-item strong {
+            color: #0a1e2f;
+            font-weight: 600;
+        }
+
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 20px;
+            padding: 8px 0 4px 0;
+        }
+        .interests span {
+            background: #e9eff6;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            color: #1a3b5d;
+            font-weight: 500;
+        }
+
+        .pub-list {
+            list-style: none;
+            padding: 0;
+        }
+        .pub-list li {
+            padding: 10px 0 8px 0;
+            border-bottom: 1px solid #edf2f8;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #1f3349;
+        }
+        .pub-list li:last-child {
+            border-bottom: none;
+        }
+        .pub-list .authors {
+            font-weight: 500;
+            color: #0a1e2f;
+        }
+        .pub-list .authors em {
+            font-style: normal;
+            background: #e2ebf5;
+            padding: 0 6px;
+            border-radius: 4px;
+        }
+        .pub-list .journal {
+            font-style: italic;
+            color: #1a4a6b;
+        }
+        .pub-list .ssci {
+            background: #d4e2f0;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 1px 8px;
+            border-radius: 20px;
+            margin-left: 6px;
+            color: #0f334f;
+            display: inline-block;
+        }
+
+        .project-block {
+            margin-top: 8px;
+        }
+        .project-category {
+            font-weight: 600;
+            color: #0f334f;
+            margin: 16px 0 10px 0;
+            font-size: 1.05rem;
+            background: #eef4fa;
+            padding: 4px 14px;
+            border-radius: 30px;
+            display: inline-block;
+        }
+        .project-list {
+            list-style: none;
+            padding-left: 6px;
+        }
+        .project-list li {
+            padding: 6px 0 6px 20px;
+            border-left: 3px solid #b8cee3;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #1a334b;
+            position: relative;
+        }
+        .project-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #2c6b9b;
+            font-weight: 400;
+        }
+        .project-list .pi {
+            background: #e0ebf6;
+            padding: 0 10px;
+            border-radius: 16px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: #0a2a44;
+            margin-right: 6px;
+        }
+
+        .footer-note {
+            margin-top: 40px;
+            border-top: 1px solid #dde6ef;
+            padding-top: 20px;
+            font-size: 0.85rem;
+            color: #4b6885;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 滿版 HERO：牛津藍 + 照片 + 中英雙語 -->
+    <div class="hero">
+        <div class="hero-inner">
+
+            <!-- 照片：請將 src 替換為您的圖片網址 -->
+            <div class="hero-avatar">
+                <img src="https://via.placeholder.com/200/002147/FFFFFF?text=Photo" alt="林佳燕 Chia-Yen Iris Lin 照片">
+            </div>
+
+            <!-- 文字區 -->
+            <div class="hero-text">
+                <div class="name-title">
+                    <h1>
+                        林佳燕
+                        <span class="en-name">Chia-Yen Iris Lin</span>
+                    </h1>
+                </div>
+                <div class="sub">
+                    <span>教授 · Professor</span>
+                    <span>應用語言學 · Applied Linguistics</span>
+                    <span>元智大學 · Yuan Ze University</span>
+                </div>
+            </div>
+
+            <!-- 右側標籤 -->
+            <div class="hero-badge">
+                <span>📍 台灣 · 桃園</span>
+                <span class="separator-dot">|</span>
+                <span>Taiwan · Taoyuan</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 主要內容 -->
+    <div class="cv-container">
+
+        <!-- 學經歷 — 三行垂直排列 -->
+        <div class="section">
+            <div class="section-title">📘 學經歷 EXPERIENCE</div>
+            <div class="exp-block">
+                <div class="exp-item"><strong>現職</strong> Professor, 元智大學 外國語文學系暨應用語言學研究所</div>
+                <div class="exp-item"><strong>Ph.D.</strong> Applied Linguistics, Lancaster University, UK</div>
+                <div class="exp-item"><strong>M.A.</strong> English Language Studies and Methods, University of Warwick, UK</div>
+            </div>
+        </div>
+
+        <!-- 研究興趣 -->
+        <div class="section">
+            <div class="section-title">🔍 研究興趣 Research Interests</div>
+            <div class="interests">
+                <span>English for Specific/Academic Purposes</span>
+                <span>Corpus Linguistics</span>
+                <span>Pragmatics</span>
+                <span>Discourse Analysis</span>
+            </div>
+        </div>
+
+        <!-- 研究著作 -->
+        <div class="section">
+            <div class="section-title">📄 研究著作 Research Publications</div>
+            <ul class="pub-list">
+                <li><span class="authors">*Chia-Yen Lin, Ken Lau & Yufang Ho</span> (2026) Metadiscourse in postgraduate thesis supervisions at UK and Taiwanese universities. <span class="journal">Journal of English for Academic Purposes</span>, 79, 101622. <span class="ssci">SSCI</span></li>
+                <li><span class="authors">*Ken Lau and Chia-Yen Lin</span> (2025). Evaluative resources of a high-stakes academic event in MICASE: Implications for advanced academic literacy teaching and pedagogy. In A. Benati (Eds.) <span class="journal">Bloomsbury Applied Linguistics volume 4: Language Teaching and Pedagogy</span> (pp. 255-275). Bloomsbury Publishing.</li>
+                <li><span class="authors">*Li-Chin Chen & Chia-Yen Lin</span> (2024). The use of questions in master's oral defences in English as an academic lingua franca in universities. <span class="journal">ESP Today</span>, 12(2), 269-294.</li>
+                <li><span class="authors">*Chia-Yen Lin & Ken Lau</span> (2021). "I found it very special and interesting": Evaluative language in Master's thesis defenses in Taiwan universities. <span class="journal">Journal of English for Academic Purposes</span> 53, 101035. <span class="ssci">SSCI</span></li>
+                <li><span class="authors">*Li-Chin Chen & Chia-Yen Lin</span> (2021). Does 'okay' mean different things in lectures delivered by teachers of English as an academic lingua franca and those using English as an L1? <span class="journal">Asian Journal of Applied Linguistics</span>, 145-158.</li>
+                <li><span class="authors">*Ken Lau, Chia-Yen Lin & Eric Odle</span> (2021). 'I am just saying maybe ...': Engagement in Dissertation Defenses. <span class="journal">Language and Education</span>, 35, 1-21. <span class="ssci">SSCI</span></li>
+                <li><span class="authors">*Chia-Yen Lin</span> (2020). Pragmatic force modifiers in English-medium master's thesis defenses in Taiwan universities. <span class="journal">English for Specific Purposes</span>, 58, 30-42. <span class="ssci">SSCI</span></li>
+                <li><span class="authors">*Angela Diaz, Ken Lau & Chia-Yen Lin</span> (2020). Pragmatic functions of I think in computer-mediated, cross-cultural communication between Taiwanese and Japanese undergraduate students. <span class="journal">Pragmatics</span>, 30, 509-531. <span class="ssci">SSCI</span></li>
+                <li><span class="authors">*Chia-Yen Lin, Ken Lau & Jacob Cousineau</span> (2018). Lecturers' and students' perceptions of the use of modifiers. <span class="journal">ELT Journal</span>, 72(1), 62-72. <span class="ssci">SSCI</span></li>
+                <li><span class="authors">*Chia-Yen Lin</span> (2017). 'I see absolutely nothing wrong with that in fact I think...': Functions of modifiers in shaping dynamic relationships in dissertation defenses. <span class="journal">Journal of English for Academic Purposes</span>, 28, 14-24. <span class="ssci">SSCI</span></li>
+                <li><span class="authors">*Ken Lau & Chia-Yen Lin</span> (2017). Internationalization of Higher Education and Language Policy: The Case of a Bilingual University in Taiwan. <span class="journal">Higher Education</span>, 74(3), 437-454. <span class="ssci">SSCI</span></li>
+                <li><span class="authors">*Ken Lau, Jacob Cousineau & Chia-Yen Lin</span> (2016). The use of modifiers in English-medium lectures by native speakers of Mandarin Chinese: A study of student perceptions. <span class="journal">Journal of English for Academic Purposes</span>, 21, 110-120. <span class="ssci">SSCI</span></li>
+                <li><span class="authors">*Kok-Hong Ho, Chia-Yen Lin & I-Chung Ke</span> (2018). The use of yes in a synchronized computer-mediated communication between Taiwanese and Japanese non-native English speaking students (pp. 198-237). Crane Publishing.</li>
+                <li><span class="authors">*Jia-Rou Liu, Chia-Yen Lin & Shu-Chang Lin</span> (2018). Multilingual communication strategies used by Taiwanese and Japanese college students in intercultural long-distance communication (pp. 139-178). Crane Publishing.</li>
+                <li><span class="authors">*Chia-Yen Lin</span> (2015). An exploratory comparison of the use of modifiers by native speakers of English and Mandarin Chinese in academic lectures. <span class="journal">Text & Talk</span>, 35(1), 77-100. <span class="ssci">SSCI</span></li>
+                <li><span class="authors">*Chia-Yen Lin</span> (2015). Seminars and interactive lectures as a community of knowledge co-construction: The use of modifiers. <span class="journal">English for Specific Purposes</span>, 38, 99-108. <span class="ssci">SSCI</span></li>
+                <li><span class="authors">*Ken Lau & Chia-Yen Lin</span> (2014). The Role of English as a Lingua Franca in Social Integration: The Case of the International Students of a Taiwan University. <span class="journal">The Asian Journal of Applied Linguistics</span>, 1, 36-49.</li>
+                <li><span class="authors">*Yi-Chen Chen, Chia-Yen Lin & Shuchang Lin</span> (2014). EFL Learners' cognitive styles as a factor in the development of metaphoric competence. <span class="journal">Journal of Language Teaching and Research</span>, 5(3), 698-707.</li>
+                <li><span class="authors">*Reena Maskara, Ken Lau & Chia-Yen Lin</span> (2014). A Comparative Study of Recommendation Letters Issued by Indian and British Authors. <span class="journal">Voices in Asia</span>, 1(1), 1-17.</li>
+                <li><span class="authors">*Chia-Yen Lin</span> (2012). Modifiers in BASE and MICASE: A matter of academic cultures or lecturing styles? <span class="journal">English for Specific Purposes</span>, 117-126. <span class="ssci">SSCI</span></li>
+                <li><span class="authors">*Chia-Yen Lin</span> (2010). '... that's actually sort of you know trying to get consultants in...': Functions and multifunctionality of modifiers in academic lectures. <span class="journal">Journal of Pragmatics</span>, 42(5), 1173-1183. <span class="ssci">SSCI</span></li>
+            </ul>
+        </div>
+
+        <!-- 研究計畫 -->
+        <div class="section">
+            <div class="section-title">🧪 研究計畫 Research Projects</div>
+
+            <div class="project-block">
+                <div class="project-category">🏛️ 國科會 (NSTC) — 主持計畫</div>
+                <ul class="project-list">
+                    <li><span class="pi">主持人</span> Sociopragmatic competence of AI versus human counterparts in power-dynamic academic spoken genres: The case of rapport management II (NSTC 115-2410-H-155-023-MY2)</li>
+                    <li><span class="pi">主持人</span> Sociopragmatic competence of AI versus human counterparts in power-dynamic academic spoken genres: The case of rapport management (NSTC 114-2410-H-155-021)</li>
+                    <li><span class="pi">主持人</span> ChatGPT or human? A comparative analysis of the use of metadiscourse resources in AI- and human-generated academic spoken genres. (NSTC 113-2410-H-155-021)</li>
+                    <li><span class="pi">主持人</span> A cross-cultural and cross-disciplinary study of metadiscourse in master's thesis supervisions: merging corpus-linguistic and discourse-analytic perspectives. (NSTC112-2410-H-155-005)</li>
+                    <li><span class="pi">主持人</span> A corpus-based comparative analysis of evaluative language in postgraduate supervisory meetings in Taiwan, Hong Kong and the United Kingdom. (MOST109-2410-H-155-034-MY3)</li>
+                    <li><span class="pi">主持人</span> Rapport management in PhD dissertation defenses in Taiwan universities and in MICASE: Corpus-based and discourse-analytical methods. (MOST108-2410-H-155-004)</li>
+                    <li><span class="pi">主持人</span> Evaluation in oral defenses and reviewer comment. (MOST106-2410-H-155-028)</li>
+                    <li><span class="pi">主持人</span> Modifiers in dissertation defenses: A tale of three universities (MOST104-2410-H-155-028)</li>
+                    <li><span class="pi">主持人</span> A longitudinal study of metadiscourse in multimodal ELF communication between Taiwanese and Japanese college students (MOST103-2410-H-155-040)</li>
+                    <li><span class="pi">主持人</span> A cross-sectional and longitudinal study of metadiscourse in multimodal ELF communication between Taiwanese and Japanese college students (NSC102-2410-H-155-031)</li>
+                    <li><span class="pi">主持人</span> Metadiscourse in English-medium lectures within the discipline of Engineering: A comparison between native speakers of English and Mandarin Chinese (NSC101-2410-H-155-035)</li>
+                    <li><span class="pi">主持人</span> Functions of modifiers in BASE and MICASE: A cross-cultural comparison (NSC100-2410-H-155-038)</li>
+                    <li><span class="pi">主持人</span> A cross-cultural comparison of modifiers in BASE and a Taiwanese lecture corpus (NSC99-2410-H-155-043)</li>
+                </ul>
+            </div>
+
+            <div class="project-block" style="margin-top: 12px;">
+                <div class="project-category">📚 教育部 (Ministry of Education) — 共同主持 / 主持</div>
+                <ul class="project-list">
+                    <li><span class="pi">共同主持人</span> 109學年元智大學高教深耕全球跨域計畫專案 - 跨國跨域專業英語合作教學與研究</li>
+                    <li><span class="pi">共同主持人</span> 108學年元智大學高教深耕全球跨域計畫專案 - 跨國跨域專業英語合作教學與研究（計畫編號117117-121001）</li>
+                    <li><span class="pi">共同主持人</span> 107學年元智大學高教深耕全球跨域計畫專案 - 跨國跨域專業英語合作教學與研究（計畫編號117102-131001）</li>
+                    <li><span class="pi">主持人</span> 106學年元智大學高教深耕全球跨域計畫專案 - 跨國跨域專業英語合作教學與研究（計畫編號117211-222211）</li>
+                    <li><span class="pi">主持人</span> 105學年元智大學創新教學偉達人才橋接國際計畫 - 國際名校合作研究教學補助專案（計畫編號120017-80）</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            CV updated · 2026 · 林佳燕 Chia-Yen Iris Lin
+        </div>
+
+    </div>
+</body>
+</html>
