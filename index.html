@@ -331,21 +331,35 @@
             margin-right: 6px;
         }
 
-        .teaching-placeholder {
+        /* 教學區塊 — 完整內容 */
+        .teaching-content {
             background: #f8faff;
-            padding: 18px 20px;
+            padding: 20px 24px;
             border-radius: 12px;
-            color: #6a7f99;
-            font-size: 0.95rem;
-            border: 2px dashed #d0dceb;
-            text-align: center;
-            min-height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            color: #1a2f44;
+            font-size: 0.98rem;
+            line-height: 1.8;
         }
-        .teaching-placeholder span {
-            opacity: 0.7;
+        .teaching-content p {
+            margin-bottom: 12px;
+        }
+        .teaching-content p:last-child {
+            margin-bottom: 0;
+        }
+        .teaching-content .course-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 14px;
+            margin-top: 10px;
+        }
+        .teaching-content .course-tags span {
+            background: #e2ebf5;
+            padding: 3px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #0a2a44;
+            font-weight: 500;
+            display: inline-block;
         }
 
         .footer-note {
@@ -360,7 +374,7 @@
 </head>
 <body>
 
-    <!-- 滿版 HERO：牛津藍 + 照片 + 中英雙語（四行） + 聯絡資訊 -->
+    <!-- 滿版 HERO -->
     <div class="hero">
         <div class="hero-inner">
 
@@ -500,8 +514,19 @@
         <!-- 教學 -->
         <div class="section">
             <div class="section-title">📖 教學 Teaching</div>
-            <div class="teaching-placeholder">
-                <span>📝 教學經歷空間</span>
+            <div class="teaching-content">
+                <p>
+                    我的研究聚焦於語用學、學術英語及語料庫語言學，近年以人工智慧與應用語言學的跨領域研究為核心，探討大型語言模型在學術溝通、社會語用能力及語篇互動中的表現，並運用語料庫方法分析真實語言資料，推動AI語言教育與學術英語研究的創新發展。
+                </p>
+                <p>
+                    教學方面，我秉持研究與教學相結合的理念，開設大數據英語、AI輔助學術寫作、專業／學術英文及語用學等課程，引導學生善用語料分析與生成式AI工具，提升學術研究、專業溝通及跨域應用能力。
+                </p>
+                <div class="course-tags">
+                    <span>📊 大數據英語</span>
+                    <span>🤖 AI輔助學術寫作</span>
+                    <span>📘 專業／學術英文</span>
+                    <span>💬 語用學</span>
+                </div>
             </div>
         </div>
 
